@@ -1,10 +1,10 @@
-const smallest_subarray_sum = function (s: number, arr: number[]) {
-  let windowStart = 0;
-  let currentWindowLength = 0;
-  let currentSum = 0;
-  let smallestWindowLength = Infinity;
+const smallest_subarray_sum = (s: number, arr: number[]): number => {
+  let windowStart: number = 0;
+  let currentWindowLength: number = 0;
+  let currentSum: number = 0;
+  let smallestWindowLength: number = Infinity;
 
-  for (let windowEnd = 0; windowEnd < arr.length; windowEnd++) {
+  for (let windowEnd: number = 0; windowEnd < arr.length; windowEnd++) {
     currentSum += arr[windowEnd];
 
     if (currentSum >= s) {
@@ -20,8 +20,12 @@ const smallest_subarray_sum = function (s: number, arr: number[]) {
   }
 
   if (smallestWindowLength !== Infinity) {
+    console.log(smallestWindowLength);
     return smallestWindowLength;
-  } else return 0;
+  } else {
+    console.log(0);
+    return 0;
+  }
 };
 
 smallest_subarray_sum(7, [2, 1, 5, 2, 3, 2]); // should return 2
